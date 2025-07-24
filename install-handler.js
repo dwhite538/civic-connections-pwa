@@ -1,27 +1,30 @@
-let deferredPrompt;
+// Track if user dismissed the prompt before
+let userDismissed = false;
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  setTimeout(showInstallPrompt, 5000); // Show after 5 sec
+  
+  // Only show if user hasn't dismissed before
+  if (!userDismissed) {
+    setTimeout(() => {
+      const installPrompt = document.getElementById('installPrompt');
+      installPrompt.style.display = 'block';
+      
+      // Hide after 15 seconds
+      setTimeout(() => {
+        if (installPrompt.style.display !== 'none') {
+          installPrompt.style.display = 'none';
+          userDismissed = true;
+        }
+      }, 15000);
+    }, 30000); // Wait 30 seconds before showing
+  }
 });
 
-function showInstallPrompt() {
-  if (deferredPrompt) {
-    const prompt = document.getElementById('installPrompt');
-    prompt.style.display = 'block';
-    setTimeout(() => prompt.style.display = 'none', 15000); // Hide after 15 sec
-  }
-}
-
-function installApp() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choice) => {
-      if (choice.outcome === 'accepted') {
-        console.log('PWA installed');
-      }
-      document.getElementById('installPrompt').style.display = 'none';
-    });
-  }
-}
+document.getElementById('installBtn').addEventListener('click', () => {
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(choice => {
+    userDismissed = (choice.outcome !== 'accepted');
+  });
+});
