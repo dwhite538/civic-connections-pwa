@@ -1,11 +1,12 @@
 {
   "name": "Civil Connections",
   "short_name": "CivCon",
-  "start_url": "/",
-  "scope": "/"
+  "start_url": "/civil-connections-pwa/",
+  "scope": "/civil-connections-pwa/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#2E7D32",
+  "description": "Find local resources in Communites",
   "icons": [
     {
       "src": "icons/icon-192.png",
