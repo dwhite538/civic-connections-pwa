@@ -2,22 +2,29 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="frame-src https://app--denton-county-food-finder-11743acb.base44.app">
-  <title>Civil Connections</title>
+  <title>Local Service Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="/civil-connections-pwa/manifest.json">
+  <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#2E7D32">
-  <!-- iOS specific -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Services Finder">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
-<!-- Launch screen image (optional) -->
-<link rel="apple-touch-startup-image" href="/splash.png">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- iOS Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Food Finder">
+  <!-- Fallback: Use 192px icon if 180px is missing -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  
   <style>
-    body { margin: 0; }
-    iframe { width: 100%; height: 100vh; border: none; }
-    #installPrompt {
+    body { 
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+    /* Universal Install Button */
+    #universal-install {
       display: none;
       position: fixed;
       bottom: 20px;
@@ -28,8 +35,9 @@
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       z-index: 9999;
+      max-width: 90%;
     }
-    #installPrompt button {
+    #universal-install button {
       background: white;
       color: #2E7D32;
       border: none;
@@ -37,21 +45,32 @@
       border-radius: 4px;
       margin-top: 8px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .browser-icon {
+      width: 20px;
+      height: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Replace with your Base44 app URL -->
-  <iframe src="https://app--denton-county-food-finder-11743acb.base44.app"></iframe>
-
-  <!-- Install Prompt -->
-  <div id="installPrompt">
-    <p>Install Civil Connections for faster access?</p>
-    <button onclick="installApp()">Install Now</button>
+  <iframe src="https://app--denton-county-food-finder-11743acb.base44.app/"></iframe>
+  
+  <!-- Universal Install Button -->
+  <div id="universal-install">
+    <p>Get the best experience:</p>
+    <button onclick="showInstallGuide()">
+      <span id="browser-icon">📱</span>
+      <span id="install-text">Install App</span>
+    </button>
   </div>
 
   <!-- Scripts -->
   <script src="./register-sw.js"></script>
   <script src="./install-handler.js"></script>
+  <!-- Roboto Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </body>
 </html>

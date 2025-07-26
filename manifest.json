@@ -1,12 +1,13 @@
 {
-  "name": "Civil Connections",
-  "short_name": "CivCon",
+  "name": "Local Services Finder",
+  "short_name": "Free Community Services",
+  "description": "Find food resources in Denton County",
   "start_url": "/civil-connections-pwa/",
   "scope": "/civil-connections-pwa/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#2E7D32",
-  "description": "Find local resources in Communities",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icons/icon-192.png",
@@ -19,22 +20,28 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "screenshots": [
-  {
-    "src": "screenshots/desktop.png",
-    "sizes": "1280x720",
-    "type": "image/png",
-    "form_factor": "wide",
-    "label": "Desktop View"
-  },
-  {
-    "src": "screenshots/mobile.png",
-    "sizes": "375x812",
-    "type": "image/png",
-    "form_factor": "narrow",
-    "label": "Mobile View"
-  }
-]
+    {
+      "src": "screenshots/desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop View"
+    },
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile View"
+    }
+  ]
 }
