@@ -72,5 +72,13 @@
   <script src="./install-handler.js"></script>
   <!-- Roboto Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+  // Restore the route after redirect
+  if (sessionStorage.redirect) {
+    const redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    window.history.replaceState({}, '', redirect);
+  }
+</script>
 </body>
 </html>
