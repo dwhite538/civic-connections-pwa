@@ -1,9 +1,9 @@
 {
   "name": "Local Services Finder",
-  "short_name": "Civil Connect",
+  "short_name": "Civic Connect",
   "description": "Find Local Services",
-  "start_url": "/civil-connections-pwa/",
-  "scope": "/civil-connections-pwa/",
+  "start_url": "/civic-connections-pwa/",
+  "scope": "/civic-connections-pwa/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#2E7D32",
