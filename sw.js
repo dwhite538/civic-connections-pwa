@@ -1,4 +1,4 @@
-const CACHE_NAME = 'civcon-v1';
+const CACHE_NAME = 'my-pwa-cache-v2';  // ⚠️ Change version number
 const OFFLINE_URL = '/offline.html';
 const ASSETS = [
   '/',
